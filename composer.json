@@ -1,0 +1,12 @@
+{
+    "name": "petersharp/simple-events",
+    "type": "wordpress-plugin",
+    "keywords": ["wordpress", "plugin", "events", "cmb2"],
+    "authors": [
+        {
+            "name": "Peter Sharp",
+            "email": "peter@webmad.co.nz"
+        }
+    ],
+    "require": {}
+}
