@@ -33,6 +33,11 @@ class Shortcodes {
 
     if(!$event) return new WP_Error('not found', "Could not find Event with title {$title}");
 
+    $event->repeats = get_post_meta( $event->ID, 'repeats', true );
+    $event->date = get_post_meta( $event->ID, 'date', true );
+    $event->time = get_post_meta( $event->ID, 'time', true );
+    $event->location = get_post_meta( $event->ID, 'location', true );
+
     return $event;
   }
 
@@ -48,7 +53,7 @@ class Shortcodes {
        <?php echo isset($data->repeats) ? $data->repeats : '' ?>
        <?php echo isset($data->date) ? $data->date : '' ?>
        <?php echo isset($data->time) ? $data->time : '' ?>
-       <?php echo isset($data->address) ? $data->address : '' ?>
+       <?php echo isset($data->location) ? join(', ', $data->location) : '' ?>
      </footer>
    </section>
    <?php
